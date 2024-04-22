@@ -1,0 +1,149 @@
+@import "../../app.scss";
+.hero {
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    position: relative;
+    z-index: 99;
+    .wrapper {
+        max-width: 1024px;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 0 20px;
+        display: flex;
+        z-index: 999;
+        @include mobile {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        @include tablet {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+        }
+        .textContainer {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 30px;
+            z-index: 100;
+            @include mobile {
+                width: 100%;
+                height: 50%;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+            @include tablet {
+                width: 100%;
+                height: 50%;
+                gap: 30px;
+                align-items: center;
+            }
+            h3 {
+                font-size: 25px;
+                background: linear-gradient(to left, #8e44ad, #9b59b6, #e74c3c, #e67e22, #f1c40f, #2ecc71);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                letter-spacing: 10px;
+                @include mobile {
+                    letter-spacing: 8px;
+                    font-weight: bold;
+                    font-size: 13px;
+                }
+            }
+            h1 {
+                font-size: 50px;
+                @include mobile {
+                    font-size: 25px;
+                }
+            }
+            .buttons {
+                a {
+                    padding: 10px;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    background-color: transparent;
+                    color: lightgray;
+                    margin-right: 15px;
+                    cursor: pointer;
+                    @include mobile {
+                        padding: 8px 3px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+            image {
+                width: 50px;
+                cursor: pointer;
+                @include mobile {
+                    width: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .profilePic {
+            width: 200px;
+            height: 200px;
+            z-index: 998;
+            @include desktop {
+                display: none;
+            }
+            @include tablet {
+                width: 300px;
+                height: 300px;
+                display: block;
+            }
+            @include mobile {
+                display: block;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                @include tablet {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .imageContainer {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 100px;
+        @include mobile {
+            display: none;
+        }
+        @include tablet {
+            display: none;
+        }
+    }
+    .slidingContainer {
+        width: 50%;
+        position: absolute;
+        bottom: -60px;
+        font-size: 50vh;
+        white-space: nowrap;
+        color: #ffffff09;
+        font-weight: bold;
+        @include mobile {
+            width: 285%;
+        }
+        @include tablet {
+            width: 180%;
+        }
+    }
+}
